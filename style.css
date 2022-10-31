@@ -1,0 +1,190 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+.app-container {
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+.app-container .title {
+  font-weight: 700;
+  font-size: 2rem;
+  color: #36454F;
+  margin-top: 1em;
+  text-align: center;
+}
+.app-container .btn-container {
+  margin-top: 2em;
+  width: 80%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1em;
+}
+.app-container .btn {
+  font-family: inherit;
+  font-weight: 500;
+  font-size: 0.9rem;
+  color: #f5f5f5;
+  letter-spacing: 1px;
+  background-color: #0096FF;
+  border: none;
+  border-radius: 10px;
+  padding: 0.8em 1.8em;
+  cursor: pointer;
+  transition: all 200ms ease-in;
+}
+.app-container .btn:hover {
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.11), 0 2px 2px rgba(0, 0, 0, 0.11), 0 4px 4px rgba(0, 0, 0, 0.11), 0 8px 8px rgba(0, 0, 0, 0.11);
+}
+.app-container .success {
+  background-color: #50C878;
+}
+.app-container .fail {
+  background-color: #EE4B2B;
+}
+.app-container .popup-container {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.6);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 200ms ease-in, visibility 200ms ease-in;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+.app-container .popup-container .popup {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  background-color: #ffffff;
+  border-radius: 5px;
+  width: 80%;
+  max-width: 300px;
+  padding: 1.6em 1.2em;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.07), 0 2px 4px rgba(0, 0, 0, 0.07), 0 4px 8px rgba(0, 0, 0, 0.07), 0 8px 16px rgba(0, 0, 0, 0.07), 0 16px 32px rgba(0, 0, 0, 0.07), 0 32px 64px rgba(0, 0, 0, 0.07);
+  transform: scale(0.7);
+  transition: transform 300ms cubic-bezier(0.52, 0.02, 0.33, 1.69);
+}
+.app-container .popup-container .popup-icon-success {
+  width: 50px;
+  height: 50px;
+  border: 2px solid #50C878;
+  border-radius: 50%;
+  position: relative;
+}
+.app-container .popup-container .popup-icon-success::before {
+  content: "";
+  position: absolute;
+  top: 14px;
+  left: 27px;
+  width: 2px;
+  height: 21px;
+  background-color: #50C878;
+  transform: rotate(45deg);
+}
+.app-container .popup-container .popup-icon-success::after {
+  content: "";
+  position: absolute;
+  top: 21px;
+  left: 16px;
+  width: 2px;
+  height: 13px;
+  background-color: #50C878;
+  transform: rotate(-45deg);
+}
+.app-container .popup-container .popup-icon-fail {
+  width: 50px;
+  height: 50px;
+  border: 2px solid #EE4B2B;
+  border-radius: 50%;
+  position: relative;
+}
+.app-container .popup-container .popup-icon-fail::before {
+  content: "";
+  position: absolute;
+  top: 11px;
+  left: 22px;
+  width: 2px;
+  height: 25px;
+  background-color: #EE4B2B;
+  transform: rotate(45deg);
+  z-index: 10;
+}
+.app-container .popup-container .popup-icon-fail::after {
+  content: "";
+  position: absolute;
+  top: 11px;
+  left: 22px;
+  width: 2px;
+  height: 25px;
+  background-color: #EE4B2B;
+  transform: rotate(-45deg);
+  z-index: 10;
+}
+.app-container .popup-container .popup-title {
+  font-weight: 500;
+  font-size: 1.4rem;
+  color: #36454F;
+  margin-top: 0.8em;
+}
+.app-container .popup-container .popup-content {
+  font-weight: 400;
+  font-size: 0.9rem;
+  color: #36454F;
+  letter-spacing: 0.2px;
+  margin: 0.6em auto 0;
+  text-align: center;
+  width: 100%;
+}
+.app-container .popup-container .popup .btn {
+  margin-top: 1.4em;
+}
+.app-container .popup-container .popup.open {
+  transform: scale(1);
+}
+.app-container .popup-container.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+@media screen and (max-width: 550px) {
+  .app-container .title {
+    font-weight: 700;
+    font-size: 1.6rem;
+    color: #36454F;
+  }
+}
+@media screen and (max-width: 400px) {
+  .app-container .popup .popup-title {
+    font-size: 1rem;
+  }
+  .app-container .popup .popup-content {
+    font-size: 0.8rem;
+  }
+  .app-container .popup .btn {
+    padding: 0.6em 1.6em;
+  }
+}/*# sourceMappingURL=style.css.map */
